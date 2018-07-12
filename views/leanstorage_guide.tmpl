@@ -1118,15 +1118,13 @@ CQL 是 {{productName}} 独创的使用类似 SQL 语法来实现云端查询功
 
 LeanCloud 暂 **不提供** 获取第三方 authData 的 SDK。开发者需要调用微信、QQ 等官方的 SDK，根据他们的文档进行获取，也可以使用其他 SNS 组件提供商，比如 ShareSDK、友盟等所提供的 SDK。
 
-开发者在获取了第三方的完整 authData 后，就可以使用我们提供的 AVUser 类的 `loginWithauthData` 和 `associateWithauthData` 两个接口，传入 authData，进行用户数据的绑定了。在操作成功之后，这部分第三方账户数据会存入 `_User` 表的 `authData` 字段里。
+开发者在获取了第三方的完整 authData 后，就可以使用我们提供的 AVUser 类的 `loginWithauthData` 或 `associateWithauthData` 两个接口，传入 authData，进行用户数据的绑定了。在操作成功之后，这部分第三方账户数据会存入 `_User` 表的 `authData` 字段里。
 
-LeanCloud 后端要求 authData 至少含有 `xid`、`access_token` 和 `expires_in` 三个字段，其中的 `xid` 是一个代称。三方平台的 authData 返回什么样的键名，开发者直接传入这个键名即可。比如，weixin 和 QQ 是 openid，微博等其他的平台基本都是 uid。
+LeanCloud 后端要求 authData 至少含有 `openid 或 uid`、`access_token` 和 `expires_in` 三个字段。来自 weixin 和 QQ 的是 openid，剩下所有的平台都是 uid。
 
-#### 先使用 loginWithauthData 进行登录
+#### 使用 loginWithauthData 进行登录
 
-如果是新用户，则生成一个新的 AVUser 并登录；如果是已有用户，则返回对应 authData 的 AVUser 实例并登录。
-
-示例代码如下：
+如果是新用户，则生成一个新的 AVUser 并登录。示例代码如下：
 
 ```
     // 以下的 platform 是通过 ShareSDK 获取的 authData 结果集。
@@ -1174,9 +1172,11 @@ LeanCloud 后端要求 authData 至少含有 `xid`、`access_token` 和 `expires
 }
 ```
 
+如果是已有用户，则返回对应 authData 的 AVUser 实例并登录。
+
 #### associateWithauthData 用于登录后绑定
 
-用户已经有了 AVUser 并登录成功后，在个人信息页面，可以用这个接口绑定新的第三方账号信息。绑定成功后，新的第三方账户信息会被添加到 AVUser 的 authData 字段里。
+用户已经有了 AVUser 并登录成功后，可以用这个接口绑定新的第三方账号信息。绑定成功后，新的第三方账户信息会被添加到 AVUser 的 authData 字段里。
 
 示例代码如下：
 
@@ -1185,7 +1185,7 @@ LeanCloud 后端要求 authData 至少含有 `xid`、`access_token` 和 `expires
     AVUser.logInInBackground("大卫", "79Lis13SSv", new LogInCallback<AVUser>() {
       @Override
       public void done(AVUser avUser, AVException e) {
-        avUser.associateWithAuthData(map, "qq", new SaveCallback() {
+        avUser.associateWithAuthData(authData, "qq", new SaveCallback() {
           @Override
           public void done(AVException e) {
             if (e == null) {
@@ -1243,7 +1243,7 @@ LeanCloud 后端要求 authData 至少含有 `xid`、`access_token` 和 `expires
 示例代码如下：
 
 ``` 
-    AVUser.loginWithAuthData(map, "weixin", true, new LogInCallback<AVUser>() {
+    AVUser.loginWithAuthData(authData, "weixin", true, new LogInCallback<AVUser>() {
       @Override
       public void done(AVUser avUser, AVException e) {
         if (e == null) {
@@ -1262,7 +1262,7 @@ LeanCloud 后端要求 authData 至少含有 `xid`、`access_token` 和 `expires
     AVUser avUser = new AVUser();
     avUser.setUsername("大卫");
     avUser.setMobilePhoneNumber("1xxxxxxxxxx");
-    avUser.loginWithAuthData(map, "weixinapp", new LogInCallback<AVUser>() {
+    avUser.loginWithAuthData(authData, "weixinapp", new LogInCallback<AVUser>() {
       @Override
       public void done(AVUser avUser, AVException e) {
 
@@ -1276,32 +1276,25 @@ LeanCloud 后端要求 authData 至少含有 `xid`、`access_token` 和 `expires
 
 当一个用户在移动应用内登录微信账号时，会被分配一个 OpenID。当这同一个用户在微信小程序内登录账号时，又会被分配另一个不同的 OpenID。这样的架构会导致的问题是，使用同一个微信号的用户，也无法在微信开发平台下的移动应用和小程序之间互通。
 
-微信官方为了解决这个问题，引入 UnionID 的体系，即：**同一微信号，对同一个微信开放平台账号下的不同应用，不管是移动 App、网站应用还是小程序，UnionID 都是相同的**。也就是说，UnionID 可以作为用户的唯一标示。
+微信官方为了解决这个问题，引入 UnionID 的体系，即：**同一微信号，对同一个微信开放平台账号下的不同应用，不管是移动 App、网站应用还是小程序，UnionID 都是相同的**。也就是说，UnionID 可以作为用户的唯一标识。
 
 其他平台，如 QQ 的 UnionID 体系，和微信的设计保持一致。
 
-LeanCloud 已经完全兼容了新的 UnionID 体系。您只需要给 loginWithauthData 和 associateWithauthData 这个接口传入更多的参数，即可完成新 UnionID 体系的集成。
+LeanCloud 已经兼容了新的 UnionID 体系。您只需要给 loginWithauthData 和 associateWithauthData 接口传入更多的参数，即可完成新 UnionID 体系的集成。
 
 要使用到的关键参数列表：
 
 参数名 | 类型 | 意义
 ---- | ----- | ----
-platform | String | 渠道来源，命名如 `weixinapp1`、`wxminiprogram1` 和 `qqapp1` 等
-unionIdPlatform | String | 平台来源，如 `weixin`、`weibo` 和 `qq` 等
-unionId | String | 由平台提供，需 **配合 asMainAccount 一起使用**
-asMainAccount | boolean | true 表示会把 unionId 绑定进 authData，并且之后使用该 unionId 来识别用户，需 **配合 unionId 一起使用**
+platform | String | 平台，命名如 `weixinapp1`、`wxminiprogram1` 和 `qqapp1` 等
+unionIdPlatform | String | unionId 平台，如 `weixin`、`weibo` 和 `qq` 等
+unionId | String | 由 unionId 平台提供。需 **配合 asMainAccount、unionIdPlatform 一起使用**
+asMainAccount | boolean | true 表示会把 unionId 绑定进当前 authData 并作为主账号，之后该 unionId 来识别用。需 **配合 unionId 、unionIdPlatform 一起使用**
 
-接入新 UnionID 系统时，每次传入的 authData 必须包含成对的渠道 xid 和平台 unionId。示例代码如下：
+接入新 UnionID 系统时，每次传入的 authData 必须包含成对的平台 `uid 或 openid` 和平台 `unionid`。示例代码如下：
 
 ```
-    // 以下的 platform 是通过 ShareSDK 获取的 authData 结果集。
-    // 使用其他第三方登录 SDK 的获取方法，请自行查询对应 SDK 提供商的文档 
-    Map<String, Object> map = new HashMap<>();
-    map.put("access_token", platform.getDb().getToken());
-    map.put("expires_in", platform.getDb().getExpiresIn());
-    map.put("openid", platform.getDb().getUserId());
-    
-    AVUser.loginWithauthData(map, "weixinapp1", platform.getDb().get("unionid"), "weixin", true, new LogInCallback<AVUser>() {
+    AVUser.loginWithauthData(authData, "weixinapp1", platform.getDb().get("unionid"), "weixin", true, new LogInCallback<AVUser>() {
       @Override
       public void done(final AVUser avUser, AVException e) {
         if (e == null) {
@@ -1330,7 +1323,7 @@ asMainAccount | boolean | true 表示会把 unionId 绑定进 authData，并且�
     }
   }
 ```
-当您想加入该 UnionID 下的一个新渠道，比如 miniprogram1 时，再次登录后生成的数据为：
+当您想加入该 UnionID 下的一个新平台，比如 miniprogram1 时，再次登录后生成的数据为：
 
 ```
   "authData": {
@@ -1356,21 +1349,22 @@ asMainAccount | boolean | true 表示会把 unionId 绑定进 authData，并且�
   }
 ```
 
-可以看到，最终该 authData 实际包含了来自 `weixin` 这个平台内的两个不同账户，一个来自移动应用(weixinapp)，一个来自小程序(miniprogram)。`_weixin_unionid ` 这个字段的值就是用户在 `weixin` 这个平台的唯一标示 UnionID 值。
+可以看到，最终该 authData 实际包含了来自 `weixin` 这个 `unionId` 体系内的两个不同平台，一个来自移动应用(weixinapp)，一个来自小程序(miniprogram)。`_weixin_unionid ` 这个字段的值就是用户在 `weixin` 这个 `unionId` 平台的唯一标识 UnionID 值。
 
 当一个用户以来自 weixinapp 的 `OpenID oTY851axxxgujsEl0f36Huxk` 和 `UnionID ox7NLs06ZGfdxxxxxe0F1po78qE` 一起传入生成新的 AVUser 后，接下来这个用户以来自 miniprogram 不同的 `OpenID ohxoK3ldpsGDGGSaniEEexxx` 和同样的 `UnionID ox7NLs06ZGfdxxxxxe0F1po78qE` 一起传入时，LeanCloud 判定是同样的 UnionID，就直接把来自 `miniprogram `的新用户数据加入到已有 authData 里了，不会再创建新的用户。
 
-这样一来，LeanCloud 后台通过识别平台性的用户唯一标示 UnionID，让来自平台内的应用程序、小程序等等不同渠道的用户都绑定到了一个 AVUser 上，实现了互通。
+这样一来，LeanCloud 后台通过识别平台性的用户唯一标识 UnionID，让来自同一个 UnionID 体系内的应用程序、小程序等等不同平台的用户都绑定到了一个 AVUser 上，实现了互通。
 
 ### 已有 authData 应用接入 UnionID
 
-先梳理一遍业务，看看是否在过去开发过程集成了移动应用程序、小程序等等多个渠道的 authData，导致同一个用户的数据已经被分别保存为不同的 AVUser：
+先梳理一遍业务，看看是否在过去开发过程集成了移动应用程序、小程序等等多个平台的 authData，导致同一个用户的数据已经被分别保存为不同的 AVUser：
 
 1、如果没有的话，直接按前面「接入 UnionID 体系」小节的代码集成即可。
 
-2、如果有的话，需要确认自身的业务需要，确定使用哪个渠道的账号。比如决定使用某个移动应用程序上生成的账号，则在该移动应用程序更新新版 App 时，接入新的 UnionID 体系相关的代码。集成相关代码，直接按「接入 UnionID 体系」小节的代码完成。
+2、如果有的话，需要确认自身的业务需要，确定要以哪个已有平台的账号为主。比如决定使用某个移动应用程序上生成的账号，则在该移动应用程序更新新版 App 时，使用到 `asMainAccount` 参数。这个移动应用带着 unionId 登录匹配或创建的账号将作为主账号，之后所有这个 unionId 的登录都会匹配到这个账号。
 
-**请注意**，第 2 种情况下，在 _User 表里会剩下一些冗余数据，也就是来自其他渠道的同一个用户的旧账号数据，可以根据自身业务需要，在甄别后对这些数据进行删除，或者闲置不管。
+**请注意**，第 2 种情况下，在 _User 表里会剩下一些用户数据，也就是没有被选为主账号的，其他平台的同一个用户的旧账号数据。这部分数据，会继续服务于你们已经发布的，仍然使用 OpenID 登录的旧版应用程序。
+
 
 ### 示例 Demo
 为了便于开发者更快熟悉整个开发流程，我们的示例项目 [LeanStorageSNSDemo]() 通过 ShareSDK 完成了第一阶段 authData 的获取，并细致地讲解第二阶段与 LeanCloud 用户体系 AVUser 进行集成的各种操作。请下载运行后查看具体代码实现。
