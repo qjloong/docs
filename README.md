@@ -1,40 +1,20 @@
-# LeanCloud Documentation
+# YLIYUN Documentation
 [![Build Status](https://travis-ci.org/leancloud/docs.svg)](https://travis-ci.org/leancloud/docs)
 [![devDependency Status](https://david-dm.org/leancloud/docs/dev-status.svg)](https://david-dm.org/leancloud/docs#info=devDependencies)
 
-LeanCloud 开发者文档
+YLIYUN 文档中心
 
 ## 技术咨询
 
-与开发相关的技术问题，请直接到 [LeanCloud 论坛](https://forum.leancloud.cn) 中提问。使用 LeanCloud 商用版的用户，请 [提交工单](https://leanticket.cn)。若文档内容有误，可以直接在文档页面上留言或提交 Github Issue。
+如有问题，请 [提交工单](http://www.yliyun.com)。若文档内容有误，可以直接在文档页面上留言或提交 Github Issue。
 
 ## 说明
 
-这个项目是 [LeanCloud 文档](http://leancloud.cn/docs/) 上的所有文档的 Markdown 格式的源码，通过转换最终被渲染成 HTML 文档]。因此 Markdown 文件里部分链接写的是最终渲染后的链接，如果直接点击会出现 404 错误。
+这个项目是 [YLIYUN 文档](http://www.yliyun.com/docs/) 上的所有文档的 Markdown 格式的源码，通过转换最终被渲染成 HTML 文档]。因此 Markdown 文件里部分链接写的是最终渲染后的链接，如果直接点击会出现 404 错误。
 
 ## 贡献
 
-我们欢迎所有用户提交 PR 或 issue 为我们贡献或者修正错误，LeanCloud 衷心感谢您的贡献。
-
-**贡献方法及注意事项**：
-
-- `fork` 这个项目
-- `npm install` 安装相关依赖
-- 执行 `grunt serve` 可以本地预览
-- 修改 `/views` 目录中的文档
-  - `/views` 中是模板文件，会被编译为 `/md` 目录中对应的文档文件。
-  - 模板支持嵌套，如 `/views` 中 `a.md` 是可以被嵌套在 `a.tmpl` 中，方法参见下文 [一套模板多份渲染]（#一套模板多份渲染）。
-  - 相关图片放在 `/images` 目录中，引用格式为 `![图片文字说明](images/livekit-gifts.png)`。
-  - 由于文档会经过 Nunjucks 和 AngularJS 渲染，当文档中需要显示 `{{content}}` 这种格式时，需要：
-    - 在文档开头增加 `{% set content = '{{content}}'  %}`，如果没有声明 Nunjucks 会将其渲染为空白。
-    - 在正文中加上 `<span ng-non-bindable>{{content}}</span>`，避免被 AngularJS 渲染。
-- 新增一个文档
-  - 命名使用中划线和小写字母，如 `livekit-android.md`、`quick-start-ios.md`。
-  - 如需要，更新文档首页 `templates/pages/index.html` 和顶部导航菜单 `templates/include/header.html`。
-- 修改文中标题或文件名称
-  - 确认要修改的标题 h1-h6 或文件名称有没有被 `/views` 和 `/templates` 目录下任何文件所引用，以免产生断链。
-  - 系统自动生成的 h1-h6 标题的 id，将所有空格、中西文标点替换为由数字和减号组成的 hash 值。在编写 Markdown 需要引用这些标题时，要将原文中的连续空白替换成一个减号即可，例如引用标题 `## 使用 SSO 登录` 时，应写为 `请参考 [SSO 登录](#使用-SSO-登录)`，纯数字标题要先在前面加个下划线，比如标题 `### 601` 引用写为 `[错误码 601](#_601)`。
-- 提交修改并发起 `Pull Request`
+我们欢迎所有用户提交 PR 或 issue 为我们贡献或者修正错误，YLIYUN 衷心感谢您的贡献。
 
 ## 内部贡献
 
@@ -123,7 +103,7 @@ $ grunt serve
   {% block <blockName> %}<不同文档之间的差异>{% endblock%}
   ```
 
-  来替换模板中存在的 block。可以参考 [leanengine_guide-node.tmpl](https://github.com/leancloud/docs/blob/master/views/leanengine_guide-node.md)
+  来替换模板中存在的 block。可以参考 [leanengine_guide-node.tmpl](https://github.com/qjloong/docs/blob/master/views/leanengine_guide-node.md)
 * 生成文档：使用下列命令会在 md 文件夹中生成最终的 md 文件：
 
   ```
@@ -131,7 +111,7 @@ $ grunt serve
   ```
 
   同样支持 `grunt server` 命令，该命令最终会执行 `watch` 插件，此时修改模板文件，或者变量文件都会自动重新生成最终的 md 文件（可能需要等待 2~4 秒）。
-* 记得将这种方式生成的 md 文件添加到 [.gitignore](https://github.com/leancloud/docs/blob/master/.gitignore) 文件中，确保这类文件不会被提交。
+* 记得将这种方式生成的 md 文件添加到 [.gitignore](https://github.com/qjloong/docs/blob/master/.gitignore) 文件中，确保这类文件不会被提交。
 
 **注意：如果在模板中需要渲染 `{{appid}}` 这样的 AngularJS 变量，则必须在模板文件的最上方先定义好一个新变量，如 `appid`，其值为 `'{{appid}}'`，例如：**
 
@@ -182,8 +162,8 @@ $ grunt serve
 * 在文本域中写入需要的内容，然后点击保存，编写的内容就会保存到对应的「渲染」文件的 block 中。
 * 最后建议打开「渲染」文件确认下内容，没问题即可通过 `grunt serve` 查看效果。当然整个过程打开 `grunt serve` 也是没问题的，它会发现「渲染」文件变动后重新加载。
 
-有问题请与 <wchen@leancloud.rocks> 联系。
+有问题请与 <loong@yliyun.com> 联系。
 
 ## License
 
-LGPL-3.0
+LGPL-3.0 感谢leancloud提供项目模版
