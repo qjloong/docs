@@ -2,6 +2,8 @@
 
 云引擎（LeanEngine）是 LeanCloud 推出的服务端托管平台。提供了多种运行环境（Node.js, Python 等）来运行服务端程序。你只需要提供服务端的业务逻辑（网站或云函数等），而服务端的多实例负载均衡，不中断服务的平滑升级等都由云引擎提供支持。
 
+![image](images/leancloud_sms_sequence.png)
+
 下面为你了解云引擎提供一个索引：
 * [快速入门](leanengine_quickstart.html)：快速的了解如何创建一个云引擎项目，本地开发调试，以及如何部署到云端。
 * [运行方案](leanengine_plan.html): 了解云引擎对较大的商业应用如何提供多实例以及运维支持，以及对学习和测试应用的支持。

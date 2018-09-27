@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/" class="navbar-brand nav-logo font-logo" title="LeanCloud 官网">LeanCloud</a>
+      <a href="/" class="navbar-brand nav-logo font-logo" title="Yliyun doc">YLIYUN</a>
     </div>
 
     <div class="collapse navbar-collapse" id="app-options">
@@ -27,25 +27,57 @@
           </li>
           {% endif %}
           <li class="dropdown dropdown-toggle-app-name">
-            <a href="sdk_down.html" title="SDK 下载">
+            <a href="sdk_down.html" title="下载中心">
               <i class="icon icon-dashbd-icon icon-package"></i>
-              <div class="name"><span class="mobile-hide">SDK </span>下载</div>
+              <div class="name">下载 <span class="mobile-hide">中心</span></div>
             </a>
           </li>
           <li class="dropdown dropdown-toggle-app-name">
-            <a href="demo.html" title="Demos">
-              <i class="icon icon-dashbd-icon icon-magic"></i>
-              <div class="name">Demos</div>
+            <a class="nav-key-6 dropdown-toggle" title="文档中心" data-toggle="dropdown">
+              <i class="icon icon-dashbd-icon icon-question"></i>
+              <div class="name">文档中心</div>
             </a>
+            <ul class="dropdown-menu">
+              <li><a href="https://leanticket.cn/t/leancloud">一粒云使用手册</a></li>
+              <li role="presentation" class="divider"></li>
+              <li><a href="http://forum.leancloud.cn">Mac 操作手册</a></li>
+              <li><a href="http://forum.leancloud.cn">Windows 操作手册</a></li>
+              <li><a href="https://leanticket.cn/t/leancloud">Android 操作手册</a></li>
+              <li><a href="chatkit-ios.html">iOS 操作手册</a></li>
+              <li role="presentation" class="divider"></li>
+              <li><a href="http://blog.leancloud.cn/">功能参数</a></li>
+              <li><a href="/dashboard/apionline/index.html">白皮书</a></li>
+              <!-- <li><a href="/apps.html">LeanCloud App</a></li> -->
+              <!-- <li><a href="#" data-toggle="modal" data-target="#modal-shortcuts">快捷键</a></li> -->
+            </ul>
+          </li>
+          <li class="dropdown dropdown-toggle-app-name">
+            <a class="nav-key-6 dropdown-toggle" title="Synsea Docs" data-toggle="dropdown">
+              <i class="icon icon-dashbd-icon icon-window"></i>
+              <div class="name">Synsea</div>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="https://leanticket.cn/t/leancloud">Synsea S系列</a></li>
+              <li role="presentation" class="divider"></li>
+              <li><a href="http://forum.leancloud.cn">SF4020</a></li>
+              <li><a href="http://forum.leancloud.cn">SF4040</a></li>
+              <li><a href="https://leanticket.cn/t/leancloud">SF4060</a></li>
+              <li role="presentation" class="divider"></li>
+              <li><a href="https://leanticket.cn/t/leancloud">Synsea E系列</a></li>
+              <li role="presentation" class="divider"></li>
+              <li><a href="http://blog.leancloud.cn/">SE4080</a></li>
+              <li><a href="/dashboard/apionline/index.html">SE4120</a></li>
+              <li><a href="/dashboard/apionline/index.html">SE4240</a></li>
+            </ul>
           </li>
           <li class="dropdown dropdown-toggle-app-name">
             <a class="nav-key-6 dropdown-toggle" title="API Docs" data-toggle="dropdown">
               <i class="icon icon-dashbd-icon icon-log"></i>
-              <div class="name">API 文档</div>
+              <div class="name">API s</div>
             </a>
-            <ul class="dropdown-menu">
-            {% include '_apidocs.html' %}
-            </ul>
+            <!--<ul class="dropdown-menu">-->
+            <!--{% include '_apidocs.html' %}-->
+            <!--</ul>-->
           </li>
           {% if basename != "index" && basename != "opencourse" %}
           <li class="dropdown dropdown-toggle-app-name">
@@ -83,31 +115,37 @@
         {% endif %}
       </div>
 
-      <ul class="nav navbar-nav navbar-user-actions navbar-right" ng-cloak>
+  <ul class="nav navbar-nav navbar-user-actions navbar-right" ng-cloak>
 
-        <li class="dropdown" ng-show="user.username">
-          <a role="button" class="dropdown-toggle user-name" data-toggle="dropdown">
-            <span class="user-gravatar">
-              <img gravatar-src="user.email" gravatar-size="64">
-            </span>
-            <span class="user-name-text">{{user.username}}</span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="/settings.html">账号设置</a></li>
-            <li><a href="/applist.html">控制台</a></li>
-            <li><a href="/settings.html#/setting/team">团队管理</a></li>
-            <li><a href="/bill.html#/bill/general">财务</a></li>
-            <!-- <li><a href="settings.html#/setting/invite">邀请好友</a></li> -->
-            <li ng-show="user.username" style=""><a ng-click="signout()">登出</a></li>
-          </ul>
-        </li>
-        <li ng-hide="user.username">
-          <a href="/login.html#/signin">登录</a>
-        </li>
-        <li ng-hide="user.username">
-          <a href="/login.html#/signup">注册</a>
-        </li>
-      </ul>
+        <!--<li class="dropdown" ng-show="user.username">-->
+          <!--<a role="button" class="dropdown-toggle user-name" data-toggle="dropdown">-->
+            <!--<span class="user-gravatar">-->
+              <!--<img gravatar-src="user.email" gravatar-size="64">-->
+            <!--</span>-->
+            <!--<span class="user-name-text">{{user.username}}</span>-->
+          <!--</a>-->
+          <!--<ul class="dropdown-menu">-->
+            <!--<li><a href="/settings.html">账号设置</a></li>-->
+            <!--<li><a href="/applist.html">控制台</a></li>-->
+            <!--<li><a href="/settings.html#/setting/team">团队管理</a></li>-->
+            <!--<li><a href="/bill.html#/bill/general">财务</a></li>-->
+            <!--&lt;!&ndash; <li><a href="settings.html#/setting/invite">邀请好友</a></li> &ndash;&gt;-->
+            <!--<li ng-show="user.username" style=""><a ng-click="signout()">登出</a></li>-->
+          <!--</ul>-->
+        <!--</li>-->
+        <!--<li ng-hide="user.username">-->
+          <!--<a href="/login.html#/signin">登录</a>-->
+        <!--</li>-->
+        <!--<li ng-hide="user.username">-->
+          <!--<a href="/login.html#/signup">注册</a>-->
+        <!--</li>-->
+    <li class="dropdown dropdown-toggle-app-name">
+      <a href="http://app.yliyun.com" target="_blank"  title="在线体验">
+        <i class="icon icon-dashbd-icon icon-magic"></i>
+        <div class="name">在线体验</div>
+      </a>
+    </li>
+    </ul>
     </div><!-- /.navbar-collapse -->
   </div>
   <!-- .container-fluid -->

@@ -220,7 +220,7 @@ angular.module('app').controller('StartCtrl', [
             }
         };
 
-        $scope.selectedPlat = 'objc';
+        $scope.selectedPlat = 'server';
 
         $scope.createApp = function () {
             $http.post(purl + 'clients/self/apps', { name: $scope.appname }).success(function (data) {

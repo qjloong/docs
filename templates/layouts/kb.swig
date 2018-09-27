@@ -17,7 +17,6 @@
 
 {% include 'templates/include/header.html' %}
 
-{% include 'templates/include/doc-nav.html' %}
 
 <div class="container-fluid <%= node %> doc-content" id="content" style="padding-bottom: 2em;">
   <div class="docs-meta"></div>

@@ -225,10 +225,10 @@ module.exports = function(grunt) {
     },
     connect: {
       options: {
-        port: 9000,
+        port: 9001,
         hostname: "0.0.0.0",
         open: {
-          target: "http://localhost:9000"
+          target: "http://localhost:9001"
         }
       },
       proxies: [
@@ -498,7 +498,7 @@ grunt.registerMultiTask('docmeta', '增加 Title、文档修改日期、设置�
         });
         changes.push('scrollspy');
 
-      } // 更新标题更新为「h1 - LeanCloud 文档」（首页除外）
+      } // 更新标题更新为「h1 - yliyun 文档」（首页除外）
       else {
         // 2017-02-06 如果 h1 不存在就不更新 title，如 start.html
         let h1 = $('.doc-content h1');

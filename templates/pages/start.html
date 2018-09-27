@@ -5,28 +5,15 @@ title: SDK 安装指南
 <div class="start-page doc-content" ng-controller="StartCtrl">
 
   <div class="step">
-    <h3 class="no-padding-top">选择开发语言或平台</h3>
+    <h3 class="no-padding-top">选择设备或平台</h3>
     <div class="step-content step1">
       <form class="custom-form-inline no-margin select-plat">
+
         <div class="radio custom-control">
           <label>
-            <input type="radio" ng-model="selectedPlat" value="objc">
+            <input type="radio" ng-model="selectedPlat" value="server">
             <span class="control-indicator"></span>
-            Objective-C
-          </label>
-        </div>
-        <div class="radio custom-control">
-          <label>
-            <input type="radio" ng-model="selectedPlat" value="swift">
-            <span class="control-indicator"></span>
-            Swift
-          </label>
-        </div>
-        <div class="radio custom-control">
-          <label>
-            <input type="radio" ng-model="selectedPlat" value="android">
-            <span class="control-indicator"></span>
-            Android
+            系统服务部署
           </label>
         </div>
 
@@ -34,14 +21,14 @@ title: SDK 安装指南
           <label>
             <input type="radio" ng-model="selectedPlat" value="js">
             <span class="control-indicator"></span>
-            JavaScript
+            Web浏览器
           </label>
         </div>
         <div class="radio custom-control">
           <label>
             <input type="radio" ng-model="selectedPlat" value="python">
             <span class="control-indicator"></span>
-            Python
+            Windows客户端
           </label>
         </div>
 
@@ -49,23 +36,22 @@ title: SDK 安装指南
           <label>
             <input type="radio" ng-model="selectedPlat" value="php">
             <span class="control-indicator"></span>
-            PHP
+            Mac客户端
           </label>
         </div>
 
         <div class="radio custom-control">
           <label>
-            <input type="radio" ng-model="selectedPlat" value="java">
+            <input type="radio" ng-model="selectedPlat" value="objc">
             <span class="control-indicator"></span>
-            Java
+            iOS
           </label>
         </div>
-
         <div class="radio custom-control">
           <label>
-            <input type="radio" ng-model="selectedPlat" value="dotnet">
+            <input type="radio" ng-model="selectedPlat" value="android">
             <span class="control-indicator"></span>
-            .NET
+            Android
           </label>
         </div>
 
@@ -78,11 +64,11 @@ title: SDK 安装指南
   </div>
 
   <div class="step" >
-    <h3>选择 LeanCloud 应用</h3>
-    <div ng-hide="user.username">
-      <p>请先登录。</p>
-      <a ng-hide="user.username" ng-href="/login.html#/signin" class="btn  btn-primary ng-scope">登录</a>
-    </div>
+    <!--<h3>选择 LeanCloud 应用</h3>-->
+    <!--<div ng-hide="user.username">-->
+      <!--<p>请先登录。</p>-->
+      <!--<a ng-hide="user.username" ng-href="/login.html#/signin" class="btn  btn-primary ng-scope">登录</a>-->
+    <!--</div>-->
     <div class="step-content" ng-show="apps" id="apps-select">
       <select class="form-control" ng-model="pageState.currentApp"  ng-options="app.app_name  for app in apps">  </select>
     </div>

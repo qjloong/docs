@@ -1,7 +1,7 @@
 {% import "views/_helper.njk" as docs %}
-# ChatKit 使用指南 &middot; iOS
+# Yliyun 使用指南 &middot; iOS
 
-> 如果需要了解 Android 版本请点击: [ChatKit 使用指南 &middot; Android](chatkit-android.html)
+> 如果需要了解 Android 版本请点击: [Yliyun 使用指南 &middot; Android](yliyun-android.html)
 
 [ChatKit](https://github.com/leancloud/ChatKit-OC) 是一个免费且开源的 UI 聊天组件，由 LeanCloud 官方推出，底层聊天服务基于 LeanCloud 的 IM 即时通讯服务 LeanMessage 而开发，支持 iOS 7+。它的最大特点是把聊天常用的一些功能配合 UI 一起提供给开发者，帮助开发者快速集成 IM 服务，轻松实现聊天功能。
 

@@ -11,7 +11,6 @@
 
 {% include 'templates/include/header.html' %}
 
-{% include 'templates/include/doc-nav.html' %}
 
 <div class="container-fluid <%= node %>" id="content" style="padding-bottom: 2em;">
   <div class="row">
