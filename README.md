@@ -1,6 +1,4 @@
 # YLIYUN Documentation
-[![Build Status](https://travis-ci.org/leancloud/docs.svg)](https://travis-ci.org/leancloud/docs)
-[![devDependency Status](https://david-dm.org/leancloud/docs/dev-status.svg)](https://david-dm.org/leancloud/docs#info=devDependencies)
 
 YLIYUN 文档中心
 
