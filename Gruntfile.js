@@ -234,7 +234,7 @@ module.exports = function(grunt) {
       proxies: [
         {
           context: "/1",
-          host: "leancloud.cn",
+          host: "yliyun.com",
           port: 443,
           https: true,
           changeOrigin: true

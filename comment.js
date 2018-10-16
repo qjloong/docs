@@ -4,7 +4,7 @@ var cheerio = require('cheerio');
 var request = require('request-promise');
 
 var sessionToken = process.env.DOC_COMMENT_TOKEN
-var commentServer = process.env.COMMENT_SERVER || 'https://comment.leanapp.cn'
+var commentServer = process.env.COMMENT_SERVER || 'http://www.yliyun.com/site'
 var commentDoms = 'p,pre';
 
 exports.release = function(docSite) {
