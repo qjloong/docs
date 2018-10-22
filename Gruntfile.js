@@ -307,20 +307,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask("default", ["build"]);
 
-  grunt.registerTask('ensureSDKVersion', function() {
-    var done = this.async();
-    if (grunt.config.get('JSSDKVersion')) return done();
-    Promise.all([
-      axios.get('https://registry.yarnpkg.com/leancloud-storage/latest').then(function(response){
-        grunt.log.oklns('leancloud-storage: ' + response.data.version);
-        grunt.config.set('JSSDKVersion', response.data.version);
-      }),
-      axios.get('https://registry.yarnpkg.com/leancloud-realtime/latest').then(function(response){
-        grunt.log.oklns('leancloud-realtime: ' + response.data.version);
-        grunt.config.set('JSIMSDKVersion', response.data.version);
-      })
-    ]).then(done);
-  });
 
 grunt.registerMultiTask('docmeta', '增加 Title、文档修改日期、设置首页内容分类导航、中文 ID 变为数字', function() {
     grunt.task.requires('assemble');
@@ -558,7 +544,7 @@ grunt.registerMultiTask('docmeta', '增加 Title、文档修改日期、设置�
 
   grunt.registerTask("build", "Main build", function() {
     grunt.task.run([
-      "clean", "ensureSDKVersion", "nunjucks", "copy:md", "markdown", "assemble", "docmeta"
+      "clean", "nunjucks", "copy:md", "markdown", "assemble", "docmeta"
     ]);
     if (!grunt.option("no-comments")) {
       grunt.task.run(["comment"]);
@@ -570,7 +556,7 @@ grunt.registerMultiTask('docmeta', '增加 Title、文档修改日期、设置�
   });
 
   grunt.registerTask("localBuild",[
-    "clean", "ensureSDKVersion", "nunjucks", "copy:md", "markdown", "assemble",
+    "clean",  "nunjucks", "copy:md", "markdown", "assemble",
     "less:dist", "postcss", "copy:asset","docmeta"
   ]);
 

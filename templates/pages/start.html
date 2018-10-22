@@ -26,7 +26,7 @@ title: SDK 安装指南
         </div>
         <div class="radio custom-control">
           <label>
-            <input type="radio" ng-model="selectedPlat" value="python">
+            <input type="radio" ng-model="selectedPlat" value="win">
             <span class="control-indicator"></span>
             Windows客户端
           </label>
@@ -34,7 +34,7 @@ title: SDK 安装指南
 
         <div class="radio custom-control">
           <label>
-            <input type="radio" ng-model="selectedPlat" value="php">
+            <input type="radio" ng-model="selectedPlat" value="mac">
             <span class="control-indicator"></span>
             Mac客户端
           </label>
@@ -73,16 +73,6 @@ title: SDK 安装指南
       <select class="form-control" ng-model="pageState.currentApp"  ng-options="app.app_name  for app in apps">  </select>
     </div>
 
-    <div class="step-content" ng-hide="!user.username || apps">
-      <form ng-hide="apps.all" class="form-inline">
-        <!-- <div class="form-group">
-          <input class="form-control" type="text" ng-model="appname" placeholder="应用名称">
-        </div> -->
-        <a ng-href="/applist.html#/newapp" class="btn  btn-primary create-app ng-scope" translate="ACTION_CREATE_APP">创建应用</a>
-        <p  class="help-block" style="">您目前还没有创建任何应用，需要先创建应用。</p>
-      </form>
-    </div>
-  </div>
 
   <div class="spinner-wrap">
     <div class="spinner"></div>
