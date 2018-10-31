@@ -25,23 +25,23 @@
 
 * 2、获取在线安装脚本 
 ```sh
-   wget http://app.yliyun.com/install.sh
+   wget http://app.yliyun.com/dowload/4.2.2install.sh
 ```
 
 * 3、授权并执行安装脚本
 ```sh
-   chmod 755 install.sh
-   ./install.sh
+   chmod 755 4.2.2install.sh
+   ./4.2.2install.sh
 ```
 
-执行成功后，等待系统安装完成。
+执行成功后，等待系统安装完成，视网络速度预计20分钟左右。
 
 
 ## 手动安装
 
 ### 下载安装包
 
-首先下载 [一粒云最新版完整包](http://app.yliyun.com/dowload/yliyun-4.2.1-build2018101014.tar.gz)：
+首先下载 [一粒云最新版完整包](http://app.yliyun.com/dowload/yliyun-v4.2.2-2018001025.tar.gz)：
 
 
 然后通过SFTP等工具将安装包上传到服务器(这里服务器地址为：192.168.0.12)：
@@ -77,30 +77,7 @@ tar xvf yliyun-4.2.1-build2018101014.tar.gz
 <img src="images/login.jpeg" class="img-responsive" alt="">
 
 
-## 查看服务器错误
 
-某个请求出错，SDK 会返回对应的错误信息。错误信息格式如下：
- 
-- **error.code**：错误码，详见 [文档](error_code.html)。
-- **error.domain**：错误域名，只有当 `error.domain` = `kLeanCloudErrorDomain` 时，才是 LeanCloud 返回的错误。
-- **error.localizedFailureReason**：错误信息详情
-- **error.userInfo**：其他信息，如历史版本的兼容信息等。
 
-例如 示例代码如下：
 
-```objc
-AVUser *user = [AVUser user];
-user.username = @"Tom";
-user.password =  @"cat!@#123";
-[user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 
-   // 获取 RESTAPI 返回的错误信息详情（SDK 11.0.0 及以上的版本适用）
-    if ([error.domain isEqualToString:kLeanCloudErrorDomain] && error.code == 202) {
-    
-    	NSString *errorMessage = error.localizedFailureReason;
-    	if (errorMessage) {
-        // handle error message
-    }
-}
-}];
-```

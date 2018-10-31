@@ -402,7 +402,7 @@ $(function() {
   initGitHubLinks();
   sidebarExpandAll();
   codeBlockTabber.start();
-  getGitHubContributors();
+  //getGitHubContributors();
   // initSmoothScroll();
 
   var arr = $('#toc ul').parents('li');
