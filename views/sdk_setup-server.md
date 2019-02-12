@@ -12,7 +12,7 @@
 ### 服务器软件要求
 
 * 操作系统：64位CentOS 6，推荐使用CentOS 6.5 ~ 6.8
-* 下载地址：http://ftp.sjtu.edu.cn/centos/6.8/isos/x8664/CentOS-6.8-x8664-minimal.iso
+* 下载地址：http://45.199.187.116/downloads/tools/CentOS-6.8-x86_64-minimal.iso
 
 ## 自动安装
 
@@ -25,13 +25,13 @@
 
 * 2、获取在线安装脚本 
 ```sh
-   wget http://app.yliyun.com/dowload/4.2.2install.sh
+   wget http://app.yliyun.com/download/v4.2.2-install.sh
 ```
 
 * 3、授权并执行安装脚本
 ```sh
-   chmod 755 4.2.2install.sh
-   ./4.2.2install.sh
+   chmod +x v4.2.2-install.sh
+   ./v4.2.2-install.sh
 ```
 
 执行成功后，等待系统安装完成，视网络速度预计20分钟左右。
@@ -41,19 +41,19 @@
 
 ### 下载安装包
 
-首先下载 [一粒云最新版完整包](http://app.yliyun.com/dowload/yliyun-v4.2.2-2018001025.tar.gz)：
+首先下载 [一粒云最新版完整包](http://app.yliyun.com/download/yliyun-v4.2.2-2018001025.tar.gz)：
 
 
 然后通过SFTP等工具将安装包上传到服务器(这里服务器地址为：192.168.0.12)：
 
 ```sh
-scp yliyun-4.2.1-build2018101014.tar.gz --tags root@192.168.0.12:/home
+scp yliyun-xxx-buildxxxx.tar.gz --tags root@192.168.0.12:/home
 ```
 
 ### 解压安装包
 
 ```sh
-tar xvf yliyun-4.2.1-build2018101014.tar.gz
+tar xvf yliyun-xxx-buildxxxx.tar.gz
 ```
 
 #### 开始安装

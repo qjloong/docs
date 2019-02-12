@@ -1,12 +1,28 @@
 {% import "views/_data.njk" as data %}
 # yliyun 系统安装包
 
+
+## V4.2.2
+
+类型|详情|资源
+--|---|---
+更新包|4.2-4.2.2升级包|[update.4.2.2.zip  (200M)](http://45.199.187.116/downloads/update-4.2.2.zip)
+完整包|一粒云4.2完整包|[yliyun-v4.2.2-2018001025.tar.gz (1G)](http://45.199.187.116/downloads/yliyun-v4.2.2-2018001025.tar.gz)
+
+
+```
+更新说明【2018-10-25】：
+1、[修复补丁]修复导入、收藏层级目录多的bug
+```
+
+
+
 ## V4.2.1
 
 类型|详情|资源
 --|---|---
-更新包|4.2-4.2.1升级包|[update.4.2.1.zip  (200M)](http://app/ylicloud.com/4.2.1.zip)
-完整包|一粒云4.2完整包|[yliyun-v4.2.1-build2018081404.tar.gz (1.03G)](http://app/ylicloud.com/4.2.1.zip)
+更新包|4.2-4.2.1升级包|[update.4.2.1.zip  (200M)](http://app.ylicloud.com/4.2.1.zip)
+完整包|一粒云4.2完整包|[yliyun-v4.2.1-build2018081404.tar.gz (1.03G)](http://app.ylicloud.com/4.2.1.zip)
 
 
 ```
@@ -18,8 +34,8 @@
 
 类型|详情|资源
 --|---|---
-更新包|4.0-4.2升级包|[update-4.2.zip  (158M)](http://app/ylicloud.com/4.2.1.zip)
-完整包|一粒云4.2完整包|[yliyun-v4.2-build2018081404.tar.gz (1.0G)](http://app/ylicloud.com/4.2.1.zip)
+更新包|4.0-4.2升级包|[update-4.2.zip  (158M)](http://app.ylicloud.com/4.2.1.zip)
+完整包|一粒云4.2完整包|[yliyun-v4.2-build2018081404.tar.gz (1.0G)](http://app.ylicloud.com/4.2.1.zip)
 
 
 ```
@@ -36,9 +52,9 @@
 
 类型|详情|资源
 --|---|---
-更新包|3.8-4.0升级包|[update-3.8.zip  (170M)](http://app/ylicloud.com/4.2.1.zip)
-完整包|一粒云4.0完整包|[yliyun-offline-v4.0-build201804180000000000.tar.gz (1G)](http://app/ylicloud.com/4.2.1.zip)
-完整包-xz|一粒云4.0完整包-xz|[yliyun-offline-v4.0-build201804180000000000.tar.xz (703.8M)](http://app/ylicloud.com/4.2.1.zip)
+更新包|3.8-4.0升级包|[update-3.8.zip  (170M)](http://app.ylicloud.com/4.2.1.zip)
+完整包|一粒云4.0完整包|[yliyun-offline-v4.0-build201804180000000000.tar.gz (1G)](http://app.ylicloud.com/4.2.1.zip)
+完整包-xz|一粒云4.0完整包-xz|[yliyun-offline-v4.0-build201804180000000000.tar.xz (703.8M)](http://app.ylicloud.com/4.2.1.zip)
 
 
 ```
@@ -51,9 +67,9 @@
 
 类型|详情|资源
 --|---|---
-更新包|3.6-3.8升级包|[update-3.8.zip  (211.4M)](http://app/ylicloud.com/4.2.1.zip)
-完整包|一粒云3.8完整包|[yliyun-offline-v3.8-build201801190000000000.tar.gz (1G)](http://app/ylicloud.com/4.2.1.zip)
-完整包-xz|一粒云3.8完整包-xz|[yliyun-offline-v3.8-build201801190000000000.tar.xz (702.0M)](http://app/ylicloud.com/4.2.1.zip)
+更新包|3.6-3.8升级包|[update-3.8.zip  (211.4M)](http://app.ylicloud.com/4.2.1.zip)
+完整包|一粒云3.8完整包|[yliyun-offline-v3.8-build201801190000000000.tar.gz (1G)](http://app.ylicloud.com/4.2.1.zip)
+完整包-xz|一粒云3.8完整包-xz|[yliyun-offline-v3.8-build201801190000000000.tar.xz (702.0M)](http://app.ylicloud.com/4.2.1.zip)
 
 ```
 更新说明【2018-01-19】：
@@ -71,10 +87,10 @@
 
 类型|详情|资源
 --|---|---
-更新包|3.5-3.6升级包|[update-3.6.zip  (182.3M)](http://app/ylicloud.com/4.2.1.zip)
-更新包|3.6- 》+补丁包|[update-3.6-openresty-补丁包.zip  (182.5M)](http://app/ylicloud.com/4.2.1.zip)
-完整包-xz|一粒云3.6完整包-xz|[yliyun-offline-v3.6-build201708240000000000.tar.xz (695.8M)](http://app/ylicloud.com/4.2.1.zip)
-vm虚拟机-ovf|一粒云3.6虚拟机ovf包|[3.6ovf.zip (6.5G)](http://app/ylicloud.com/4.2.1.zip)
+更新包|3.5-3.6升级包|[update-3.6.zip  (182.3M)](http://app.ylicloud.com/4.2.1.zip)
+更新包|3.6- 》+补丁包|[update-3.6-openresty-补丁包.zip  (182.5M)](http://app.ylicloud.com/4.2.1.zip)
+完整包-xz|一粒云3.6完整包-xz|[yliyun-offline-v3.6-build201708240000000000.tar.xz (695.8M)](http://app.ylicloud.com/4.2.1.zip)
+vm虚拟机-ovf|一粒云3.6虚拟机ovf包|[3.6ovf.zip (6.5G)](http://app.ylicloud.com/4.2.1.zip)
 
 
 ```
@@ -87,9 +103,9 @@ vm虚拟机-ovf|一粒云3.6虚拟机ovf包|[3.6ovf.zip (6.5G)](http://app/ylicl
 
 类型|详情|资源
 --|---|---
-更新包|3.4-3.5升级包|[update-3.5.zip  (128.7M)](http://app/ylicloud.com/4.2.1.zip)
-完整包-xz|一粒云3.6完整包-xz|[yliyun-offline-v3.5-build201706230000000000.tar.xz (694.8M)](http://app/ylicloud.com/4.2.1.zip)
-vm虚拟机-ova|一粒云3.6虚拟机ovf包|[yliyun-3.5.ova (4.3G)](http://app/ylicloud.com/4.2.1.zip)
+更新包|3.4-3.5升级包|[update-3.5.zip  (128.7M)](http://app.ylicloud.com/4.2.1.zip)
+完整包-xz|一粒云3.6完整包-xz|[yliyun-offline-v3.5-build201706230000000000.tar.xz (694.8M)](http://app.ylicloud.com/4.2.1.zip)
+vm虚拟机-ova|一粒云3.6虚拟机ovf包|[yliyun-3.5.ova (4.3G)](http://app.ylicloud.com/4.2.1.zip)
 
 
 ```
@@ -101,8 +117,8 @@ vm虚拟机-ova|一粒云3.6虚拟机ovf包|[yliyun-3.5.ova (4.3G)](http://app/y
 
 类型|详情|资源
 --|---|---
-更新包|3.3-3.4升级包|[update-3.4.zip (152.8)](http://app/ylicloud.com/4.2.1.zip)
-完整包|一粒云3.4完整包|[yliyun-offline-v3.4-build201705100100000000.tar.xz (692.3M)](http://app/ylicloud.com/4.2.1.zip)
+更新包|3.3-3.4升级包|[update-3.4.zip (152.8)](http://app.ylicloud.com/4.2.1.zip)
+完整包|一粒云3.4完整包|[yliyun-offline-v3.4-build201705100100000000.tar.xz (692.3M)](http://app.ylicloud.com/4.2.1.zip)
 
 
 ```
@@ -120,10 +136,10 @@ vm虚拟机-ova|一粒云3.6虚拟机ovf包|[yliyun-3.5.ova (4.3G)](http://app/y
 
 类型|详情|资源
 --|---|---
-更新包|3.2-3.3升级包|[update-3.3.zip  (150.5)](http://app/ylicloud.com/4.2.1.zip)
-完整包|一粒云3.3完整包|[yliyun-offline-v3.3-build201703050000000000.tar.xz (690.1M)](http://app/ylicloud.com/4.2.1.zip)
-完整包-plus|一粒云3.3plus|[yliyun-offline-v3.3-plus-build201704110000000000.tar.xz (690.9M)](http://app/ylicloud.com/4.2.1.zip)
-完整包-ovf|一粒云3.3-ovf|[yliyun-OVF.zip (3.4G)](http://app/ylicloud.com/4.2.1.zip)
+更新包|3.2-3.3升级包|[update-3.3.zip  (150.5)](http://app.ylicloud.com/4.2.1.zip)
+完整包|一粒云3.3完整包|[yliyun-offline-v3.3-build201703050000000000.tar.xz (690.1M)](http://app.ylicloud.com/4.2.1.zip)
+完整包-plus|一粒云3.3plus|[yliyun-offline-v3.3-plus-build201704110000000000.tar.xz (690.9M)](http://app.ylicloud.com/4.2.1.zip)
+完整包-ovf|一粒云3.3-ovf|[yliyun-OVF.zip (3.4G)](http://app.ylicloud.com/4.2.1.zip)
 
 
 ```
@@ -137,8 +153,8 @@ vm虚拟机-ova|一粒云3.6虚拟机ovf包|[yliyun-3.5.ova (4.3G)](http://app/y
 
 类型|详情|资源
 --|---|---
-更新包|2.6-3.2升级包|[update-2.6.3-3.2.zip  (194.7M)](http://app/ylicloud.com/4.2.1.zip)
-完整包|一粒云3.2完整包|[yliyun-offline-v3.2-build201701120006070000.tar.xz (693.1M)](http://app/ylicloud.com/4.2.1.zip)
+更新包|2.6-3.2升级包|[update-2.6.3-3.2.zip  (194.7M)](http://app.ylicloud.com/4.2.1.zip)
+完整包|一粒云3.2完整包|[yliyun-offline-v3.2-build201701120006070000.tar.xz (693.1M)](http://app.ylicloud.com/4.2.1.zip)
 
 ```
 更新说明2017-01-12】：
@@ -158,7 +174,7 @@ vm虚拟机-ova|一粒云3.6虚拟机ovf包|[yliyun-3.5.ova (4.3G)](http://app/y
 
 类型|详情|资源
 --|---|---
-完整包|一粒云2.6完整包|[yliyun-2.6.3-build20161111-offline.tar.gz (789.6M)](http://app/ylicloud.com/4.2.1.zip)
+完整包|一粒云2.6完整包|[yliyun-2.6.3-build20161111-offline.tar.gz (789.6M)](http://app.ylicloud.com/4.2.1.zip)
 
 
 ```
@@ -172,8 +188,8 @@ vm虚拟机-ova|一粒云3.6虚拟机ovf包|[yliyun-3.5.ova (4.3G)](http://app/y
 
 类型|详情|资源
 --|---|---
-更新包|2.4-2.6升级包|[update-2.4.6-2.6.2.2.zip  (102.9k)](http://app/ylicloud.com/4.2.1.zip)
-完整包|一粒云2.4完整包|[yliyun-2.4.6-offline.tar.gz (790.1M)](http://app/ylicloud.com/4.2.1.zip)
+更新包|2.4-2.6升级包|[update-2.4.6-2.6.2.2.zip  (102.9k)](http://app.ylicloud.com/4.2.1.zip)
+完整包|一粒云2.4完整包|[yliyun-2.4.6-offline.tar.gz (790.1M)](http://app.ylicloud.com/4.2.1.zip)
 
 
 ```
