@@ -47,7 +47,7 @@
 然后通过SFTP等工具将安装包上传到服务器(这里服务器地址为：192.168.0.12)：
 
 ```sh
-scp yliyun-xxx-buildxxxx.tar.gz --tags root@192.168.0.12:/home
+scp yliyun-xxx-buildxxxx.tar.gz --tags root@192.168.0.12:/opt
 ```
 
 ### 解压安装包
