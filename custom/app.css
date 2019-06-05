@@ -12118,7 +12118,7 @@ select.input-sm.cloud-stat-condition {
 }
 /* line 1897, /Volumes/data/Code/avoscloud/OpensoureDoc/custom/less/section-basic.less */
 .start-page .step img {
-  max-width: 600px;
+  /*max-width: 600px;*/
   margin-top: 10px;
   margin-bottom: 20px;
 }
