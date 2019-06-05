@@ -1,3 +1,8 @@
+<a name="0.1.11"></a>
+## [0.1.11](https://github.com/leancloud/docs/compare/v0.1.10...v0.1.11) (2019-06-05)
+
+
+
 <a name="0.1.10"></a>
 ## [0.1.10](https://github.com/leancloud/docs/compare/v0.1.9...v0.1.10) (2019-02-12)
 
